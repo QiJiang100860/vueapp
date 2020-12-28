@@ -1,10 +1,6 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <!-- <van-button plain hairline type="info" @click="login">登录</van-button>
-    <van-button plain hairline type="info" @click="loginWebview"
-      >登录webView</van-button
-    > -->
   </div>
 </template>
 
@@ -18,10 +14,16 @@ export default {
       const url = window.location.origin + "/home";
       alert(url);
       this.$Plus(() => {
-        const w = window.plus.webview.create('http://www.baidu.com', 1, {}, "");
-        w.show()
+        const w = window.plus.webview.create("http://www.baidu.com", 1, {}, "");
+        w.show();
       });
     },
   },
 };
 </script>
+
+
+
+<style lang="less">
+@import url("@/style/index.less");
+</style>

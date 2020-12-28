@@ -8,33 +8,27 @@ export default new Router({
         // 重定向
         {
             path: '/',
-            redirect: "/login"
+            redirect: "/welcome"
         },
         // 登陆
         {
-            path: "/login",
-            name: "login",
-            component: () => import('@/views/login')
-        },
-        // 登陆
-        {
-            path: "/home",
-            name: "home",
-            component: () => import('@/views/home')
+            path: "/welcome",
+            name: "welcome",
+            component: () => import('@/views/welcome')
         },
 
-        // // 框架
-        // {
-        //     path: "/frame",
-        //     name: "frame",
-        //     component: () => import('@/views/frame'),
-        //     children:[
-        //         {
-        //             path:'/index',
-        //             name:'home_index',
-        //             component:()=> import('@/views/frame/index')
-        //         }
-        //     ]
-        // }
+        // 框架
+        {
+            path: "/frame",
+            name: "frame",
+            component: () => import('@/components/PFrame'),
+            children:[
+                {
+                    path:'/home',
+                    name:'frame_home',
+                    component:()=> import('@/views/home')
+                }
+            ]
+        }
     ]
 })
