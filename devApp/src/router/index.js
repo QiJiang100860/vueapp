@@ -16,7 +16,6 @@ export default new Router({
             name: "login",
             component: () => import('@/views/login')
         },
-        
         // 登陆
         {
             path: "/home",

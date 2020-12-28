@@ -6,8 +6,8 @@
     />
     <van-grid :column-num="3">
       <van-grid-item icon="photo-o" text="登录" @click="login" />
-      <van-grid-item icon="photo-o" text="小游戏" @click="game" />
-      <van-grid-item icon="photo-o" text="签名木板" @click="sign" />
+      <van-grid-item icon="photo-o" text="webview" @click="webview" />
+      <van-grid-item icon="photo-o" text="winOpen" @click="winOpen" />
     </van-grid>
 
     <!-- <van-button plain hairline type="info" @click="login">登录</van-button> -->
@@ -20,7 +20,21 @@ export default {
     login() {
       this.$router.push("home");
     },
-    game() {},
+    webview() {
+      alert("new webview")
+      const _this = this;
+      _this.$Plus(() => {
+        alert('plus ready')
+        const wv = window.plus.webview.create("http://www.dcloud.io/");
+        wv.show();
+      });
+    },
+    winOpen(){
+      window.open('http://www.dcloud.io/')
+    },
+    game() {
+      this.$plus.then(() => {});
+    },
     sign() {},
   },
 };
